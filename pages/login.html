@@ -1,0 +1,51 @@
+
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<title>欧尼桑</title>
+	<link href="..\css\main.css" type="text/css" rel="stylesheet"/>
+	<link href="..\css\font-awesome.css" type="text/css" rel="stylesheet"/>
+	<script src="..\js\verify.js" type="text/javascript"></script>
+</head>
+<body>
+	
+	<div class="menuDiv">
+				<a href="../index.php"><img src="../images/wenzi-logo.png" alt="首页" title="首页"  class="logo"/></a>
+				<ul>
+					<li>
+						<form action="search.php" method="post">
+	  						<input type="text" placeholder="请输入书名、作者..." name="searchkey">
+	 							<button type="submit" hidden="true"></button>
+						</form>
+					</li>
+					<li><a href="../index.php">首页</a></li>
+					<li><a href=" ">男频</a></li>
+					<li><a href=" ">女频</a></li>
+					<li><a href=" ">排行榜</a>
+						<ul>
+							<li><a href="rank.php?type=1">下书网排行</a></li>
+							<li><a href="rank.php?type=2">起点中文网</a></li>
+							<li><a href="rank.php?type=3">热搜排行</a></li>
+						</ul>
+						</li>
+					</ul>
+	</div>
+	<form action="login.php" class="registerForm" id="registerform" method="post">
+		<fieldset>
+			
+			<legend style="color:red;font-size:22px;">登录</legend>
+			<p >用户名:</p><input align="center" type="text" size="30" name="nickname" onBlur="javascript:verifyName()" required /><br />
+			<div id="nameDiv"></div>
+			<p >密码:</p><input type="password" size="30" name="psw1" onBlur="javascript:verifyPsw1()" required />
+			<input type="submit" onclick="return submitLogin()"/>
+			<div id="psw1Div"></div>
+			
+			
+		</fieldset>
+	</form>
+	</div>
+	<footer>
+		<p>Powered by <a href="mailto:oniisan@163.com" title="点击发送邮件给管理员">oniisan studio </a></p>
+		<p>本站所提供作品均来自互联网，仅作交流学习使用，如有侵权，请联系修改。</p>
+	</footer>
+</body>
