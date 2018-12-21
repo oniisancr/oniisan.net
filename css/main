@@ -1,0 +1,233 @@
+*{
+
+}
+body{
+		padding:0px;
+	margin:0px;
+}
+.menuDiv { 
+	display:inline-block;
+	width:95%;
+	height:40px;
+	overflow: hidden; 
+	margin-left:2.5%;
+	margin-top:25px;
+	border-style: solid;
+	border-width: 0px 1px 2px 1px;
+	border-color:#F2F2F2;
+	background-color: none;
+	}
+	
+.menuDiv > a>img{
+	float:left;
+	height:40px;
+	margin-right:25%;
+	background:none;
+}
+.menuDiv input {
+	display:block;
+	float:left;
+  height: 28px;
+  padding-left: 10px;
+  margin-top:8px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  background: transparent;
+  color: #9E9C9C;
+}
+
+.menuDiv a {
+		text-decoration: none;
+	}
+.menuDiv ul , .menuDiv li {
+		list-style: none;
+       margin: 0;
+       padding: 0;
+       float: left;     
+       z-index:20;   //防止被遮挡
+	} 
+
+.menuDiv > ul > li > ul {
+		position: absolute;
+		display: none;
+	}
+.menuDiv > ul > li > ul > li {
+		float: none;
+	}
+ 
+.menuDiv > ul > li:hover ul {
+		display: block;
+	}
+
+.menuDiv > ul > li > a {
+		 width: 80px;
+     line-height: 40px;
+     font-size:16px;
+     color: black;
+    // background-color: transparent;
+     text-align: center;
+     border-left: 2px solid transparent;
+     display: block;
+	}
+	
+
+.menuDiv > ul > li > a:hover {
+		color: white;
+		background-color: #666;
+	}
+
+.menuDiv > ul > li > ul > li > a {
+		width: 80px;
+    line-height: 40px;
+    color: black;
+     // background-color: #faffeb;
+     font-size:14px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: block;
+	}
+.menuDiv > ul > li > ul > li > a:hover {
+		color:white;
+     background-color: #666;
+	}
+	
+.search-input{
+	
+	position:relative;
+	width:95%;
+	height:400px;
+	margin:auto;
+}
+.search-input form {
+
+	width:80%;
+	line-height:400px;
+	margin:auto;
+	
+//	background-color: gray;
+}
+.search-input input, .search-input button {
+	 border-radius: 5px;
+  border: none;
+  outline: none;
+}
+.search-input input {
+	opacity:0.5;
+	margin-left:15%;
+  width: 65%;
+  height: 42px;
+  background: #A3D0C3;
+  padding-left: 15px;
+}
+.search-input input:hover{
+	opacity:1;
+}
+.search-input button {
+	opacity:0.5;
+	margin-left:5px;
+  height: 42px;
+  width: 42px;
+  cursor: pointer;
+  background: #A3D0C3;
+}
+.search-input button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
+.search-input button:hover{
+	opacity:1;
+}
+.emoji{
+	position:absolute;
+	top:95px;
+	left:40%;
+	width:30%;
+	height:75px;
+	overflow:hidden;
+	//background-color:red;
+
+}
+.emoji img{
+	width:80px;
+	text-align: center;
+	display:inline-block;
+	vertical-align:middle;
+}
+.emoji p{
+	display:inline-block;
+	padding-left:15px;
+
+font-family: Times, TimesNR, 'New Century Schoolbook', Georgia,'New York', serif;
+}
+footer{
+	display:block;
+	font-family:Microsoft JhengHei;
+	font-size:12px;
+	text-align:center;
+	margin-top:40px;
+	font-weight:bold;
+	clear:both;
+	
+}
+footer a{
+	text-decoration: none;
+	color:black;
+}
+.clear{
+	clear:both;
+}
+#headfuncdiv{
+	display:inline-block;
+	height:40px;
+}
+#headfuncdiv a{
+	display: block;
+	text-decoration: none;
+	color: black;
+	line-height: 40px;
+	font-size:14px;
+	margin-left:10px;
+}
+#headfuncdiv a:hover{
+	color: #008573;
+}
+#headfuncdiv  li >ul{
+	position: absolute;
+		float: left;
+	 display: none;
+} 
+#headfuncdiv  li >ul>li{
+	float: none;
+}
+#headfuncdiv  li:hover >ul{
+
+	display: block;
+}
+.registerForm{
+	
+	border: 1px solid #fff;
+	margin:auto;
+	width:50%;
+}
+.registerForm input{
+		margin-top:15px;
+		margin-left:30px;
+	 border: 1px solid #ccc;
+   padding: 7px 0px;
+   border-radius: 3px;
+   padding-left:5px;
+}
+.registerForm input:focus{
+   border-color: #66afe9;
+   outline: 0;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+form p{
+	display:inline-block; 
+	margin-top:10px;
+	margin-left:40px;
+}
