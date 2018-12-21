@@ -1,0 +1,32 @@
+
+
+//用户信息表
+create table userinfo(
+user_id int(6) primary key auto_increment,
+user_password nvarchar(20) not null,
+user_name nvarchar(20),
+user_email varchar(20) not null unique,
+user_photo nvarchar(100) default 'defaultphoto.png',
+register_date datetime not null,
+user_role int default '1'
+)auto_increment = 1000;
+
+
+
+//下面语句暂无用
+insert into userinfo(user_password,user_email,user_role) values ('admin','crsite@qq.com','0');
+alter table userinfo alter column user_photo set default 'defaultphoto.png';
+ update userinfo set user_photo='defaultphoto.png';
+delete from userinfo where user_role='1';
+
+
+//收藏表
+create table favs(
+fav_id int primary key auto_increment,
+fav_user nvarchar(20) not null,
+novel_name int(8) not null,
+add_date datetime not null
+);
+
+
+s
