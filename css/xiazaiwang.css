@@ -1,0 +1,68 @@
+body{
+	
+}
+.listDiv{
+	display:block;
+	width:60%;
+	text-align:left;
+	margin:auto;
+	//background-color:black;
+}
+.listDiv .title a {
+		text-decoration: none;
+		color:#FE4C40;		//夕阳红
+		font-size:18px;
+}
+a{
+	text-decoration: none;
+}
+.info{
+	display:block;
+	margin-top:20px;
+	margin:auto;
+	height:100px;
+	width:80%;
+	background-color:#f2f2f2;	
+
+}
+.title{
+	
+	color:#FE4C40;
+	
+}
+.title span{
+	font-size:14px;
+	padding-right:10px;
+	padding-top:5px;
+	float:right;
+}
+.ini{
+	font-size:12px;
+	display:inline-block;
+	margin: 0 0 0 0;
+}
+.intro{
+	font-size:12px;
+}
+.item{
+	background-color:#f2f2f2;	
+}
+
+.typeDiv{
+	display:block;
+	width:80%;
+	text-align:left;
+	margin:auto;
+	
+}
+.typeDiv ul, .typeDiv li{
+	list-style: none;
+}
+.typeDiv  a{
+	display:inline-block;
+	color:gray;
+	font-size:14px;
+	text-align:center;
+	margin-left:15px;
+	
+}
