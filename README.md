@@ -1,2 +1,3 @@
 # oniisan.net
-the web's code
+
+this code only for non-profit work!!
