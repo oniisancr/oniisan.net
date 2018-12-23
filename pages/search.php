@@ -36,7 +36,6 @@
 	}
 	
 	$content=$rank->searchKeyWord($keyword,$nowPage);
-	
 	$content=$rank->addDomain($content);
 	$addStr=' target="_blank"';	//加入属性
 	$content=preg_replace('/title="/',$addStr.'title=" ',$content);
