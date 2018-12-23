@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <head>
 	<meta charset="UTF-8">
 	<title>欧尼桑</title>
@@ -18,8 +18,8 @@
 						</form>
 					</li>
 					<li><a href="../index.php">首页</a></li>
-					<li><a href=" ">男频</a></li>
-					<li><a href=" ">女频</a></li>
+					<li><a href="noveltype.php?type=0">男频</a></li>
+					<li><a href="noveltype.php?type=1">女频</a></li>
 					<li><a href=" ">排行榜</a>
 						<ul>
 							<li><a href="rank.php?type=1">下书网排行</a></li>
@@ -36,7 +36,7 @@
 			<div id="nameDiv"></div>
 			<p >邮箱:</p><input type="text" size="30" id="email" name="email" onBlur="javascript:verifyEamil()" required />
 			<input type="button" length=60  id="btn" value="发送验证码" onclick="javascript:sendcode()"/><br />
-			<p >验证码：</p ><input type="text" name="code" placeholder="请填入验证码" length=40/>
+			<p >验证码：</p ><input type="text" name="code" placeholder="请填入验证码" length=40 required/>
 			<div id="emailDiv"></div>
 			<p >密码</p><input type="password" size="30" name="psw1" onBlur="javascript:verifyPsw1()" required /><br />
 			<div id="psw1Div"></div>
