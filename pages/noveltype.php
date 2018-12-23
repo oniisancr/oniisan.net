@@ -165,7 +165,7 @@
 	$addStr=' target="_blank"';	//加入属性
 	$html=preg_replace('/title="/',$addStr.'title=" ',$html);
 	$rules = array(
-    'res' => array('#waterfall','html','-.pic  -.cont -.num)')
+    'res' => array('.item','html','-.pic  -.cont -.num)')
 	);
 	$data = QueryList::Query($html,$rules)->data;
 	$rules2=array( 
@@ -301,11 +301,24 @@
 				echo '无内容';
 				
 			}
+			$rules2 = array(
+				'titleid' => array('.title h3 a','href')
+				);
+
+			//echo "共有".count($data);
+
+			//var_dump($data);
+			//exit;
 			for ($i = 0; $i < count($data); $i++) {
 			 	  // code to execute 
-			 	  echo $data[$i]['res']."\n";
+				   echo $data[$i]['res'];
+					$data2 = QueryList::Query($data[$i]['res'],$rules2)->data;
+					//echo $data2[0]['titleid'];
+					preg_match('/\d+/',$data2[0]['titleid'],$id);				//提取小说id
+					$com="<a href ='novel.php?id=$id[0]' class='comment'>评论</a>";
+				   echo "$com"."\n";
+
 			}
-			
 			?>		
 		<div class="clear"></div>
 		<?php
@@ -321,7 +334,6 @@
 					echo $nowPage+1;
 					echo " 'class='click'>下一页</a>";		//下一页	
 				echo"</div>";
-		
 		?>
 		</div>
 		
