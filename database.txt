@@ -1,26 +1,33 @@
 
 
-//ÓÃ»§ĞÅÏ¢±í
+//ç”¨æˆ·ä¿¡æ¯è¡¨
 create table userinfo(
 user_id int(6) primary key auto_increment,
-user_password nvarchar(20) not null,
-user_name nvarchar(20),
+user_password varchar(40) not null,
+user_name varchar(40),
 user_email varchar(20) not null unique,
-user_photo nvarchar(100) default 'defaultphoto.png',
+user_photo varchar(200) default 'defaultphoto.png',
 register_date datetime not null,
 user_role int default '1'
 )auto_increment = 1000;
 
 
+create table comment(
+comment_id int primary key auto_increment,
+comment_user nvarchar(20) not null,
+novel_id int(8) not null,
+comment_date datetime not null,
+comment_content nvarchar(100) not null);
 
-//ÏÂÃæÓï¾äÔİÎŞÓÃ
+
+//ä¸‹é¢è¯­å¥æš‚æ— ç”¨
 insert into userinfo(user_password,user_email,user_role) values ('admin','crsite@qq.com','0');
 alter table userinfo alter column user_photo set default 'defaultphoto.png';
  update userinfo set user_photo='defaultphoto.png';
 delete from userinfo where user_role='1';
 
 
-//ÊÕ²Ø±í
+//æ”¶è—è¡¨
 create table favs(
 fav_id int primary key auto_increment,
 fav_user nvarchar(20) not null,
@@ -29,4 +36,3 @@ add_date datetime not null
 );
 
 
-s
