@@ -21,12 +21,15 @@
 	 		$url="https://www.xiashu.la/top_xiashu_1.html";		//默认为下书网排行
 	}
 	$html=$rank->getFulUrl($url);
-	$addStr=' target="_blank"';	//加入属性
+	$addStr=' target="_blank"';									//加入属性
 	$html=preg_replace('/title="/',$addStr.'title=" ',$html);
+
+	
+	//$html=preg_replace('/(<\/p>){1}(.*?)(<\/div>){1}/',"$com",$html);
+
 	$rules = array(
     //采集class为toplistbox这个元素里面的纯文本内容
     'toplist' => array('.toplistbox','html','-.pic -.yuedu'),
-
 	);
 	$data = QueryList::Query($html,$rules)->data;
 
@@ -94,9 +97,18 @@
 				echo '无内容';
 				
 			}
+			$rules2 = array(
+				'titleid' => array('.novelname','href'),
+				);
 			for ($i = 0; $i < count($data); $i++) {
 			 	  // code to execute 
-			 	  echo $data[$i]['toplist']."\n";
+				   echo $data[$i]['toplist'];
+					$data2 = QueryList::Query($data[$i]['toplist'],$rules2)->data;
+
+					preg_match('/\d+/',$data2[0]['titleid'],$id);				//提取小说id
+					$com="<a href ='novel.php?id=$id[0]' class='comment'>评论</a>";
+
+				   echo "$com"."\n";
 			}
 			?>
 			<div class="clear"></div>
