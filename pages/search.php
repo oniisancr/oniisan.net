@@ -43,13 +43,21 @@
 	
 	//echo $content;
 	
+	// $rules = array(
+    // 'res' => array('#main','html','-.pic -.muludh -.cont -.num -.footer)')
+	// );
+
 	$rules = array(
-    'res' => array('#main','html','-.pic -.muludh -.cont -.num -.footer)')
-	);
+		'res' => array('.item','html','-.pic -.cont -.num')
+		);
+
+
 	$data = QueryList::Query($content,$rules)->data;
 	$rules2=array( 
 			'res2' => array('#main>.footer>span','text')		//获取有多少页多少结果
-	      );
+		  );
+		  
+
 	$data2 = QueryList::Query($content,$rules2)->data;
 	@$pageinfo=$data2[0]['res2'];
 	
@@ -115,9 +123,19 @@
 				echo '无内容';
 				
 			}
+			$rules3 = array(
+				'titleid' => array('a','href'),
+				);
 			for ($i = 0; $i < count($data); $i++) {
 			 	  // code to execute 
-			 	  echo $data[$i]['res']."\n";
+				   echo $data[$i]['res']."\n";
+				   $data3 = QueryList::Query($data[$i]['res'],$rules3)->data;
+				  
+					preg_match('/\d+/',$data3[0]['titleid'],$id);				//提取小说id
+					//echo $data3[0]['titleid'];
+					$com="<a href ='novel.php?id=$id[0]' class='comment'>评论</a>";
+
+				   echo "$com"."\n";
 			}
 			
 			?>		
